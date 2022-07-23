@@ -77,8 +77,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 }
               ]
             }
@@ -144,6 +144,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "NewProject"
+    }
+  },
+  "defaultProject": "NewProject",
+  "cli": {
+    "analytics": "cdc97e89-a984-4839-a4e1-a9a4fbff63ef"
+  }
 }

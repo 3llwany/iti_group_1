@@ -1,0 +1,54 @@
+1- Get All users
+type: GET
+url: https://jsonplaceholder.typicode.com/users
+**************************************************
+2- Get user by id
+type: GET
+url: https://jsonplaceholder.typicode.com/users/1
+*************************************************
+3- add new user
+type: POST
+url: https://jsonplaceholder.typicode.com/users
+body: 
+ {
+        "name": "Sayed Elwany",
+        "username": "3llwany",
+        "email": "sayed.elwany@mashura.co",
+        "address": {
+            "street": "street1",
+            "suite": "Apt. 556",
+            "city": "october",
+            "zipcode": "92998-3874"
+        },
+        "phone": "01117731605",
+        "website": "3llwany.com",
+        "company": {
+            "name": "Mashura"
+        }
+    }
+*************************************************
+4- update user
+type: PUT
+url: https://jsonplaceholder.typicode.com/users
+body: 
+ {
+        "name": "Sayed Elwany",
+        "username": "3llwany",
+        "email": "sayed.elwany@mashura.co",
+        "address": {
+            "street": "street1",
+            "suite": "Apt. 556",
+            "city": "october",
+            "zipcode": "92998-3874"
+        },
+        "phone": "01117731605",
+        "website": "3llwany.com",
+        "company": {
+            "name": "Mashura"
+        }
+    }
+
+*************************************************
+5- Delete user
+type: DELETE
+url: https://jsonplaceholder.typicode.com/users/1

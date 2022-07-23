@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~ngx-toastr/toastr.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+/* toster */
+#toast-container > div {
+  opacity: 1;
+  transition: all 0.3s ease-out;
+  box-shadow: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dddddd;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7f8fa;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+}
+
+/* if input invalud  */
+input.ng-touched.ng-invalid {
+  border-color: red !important;
+}
+
+/* if input valid */
+input.ng-touched.ng-valid {
+  background-color: #efffbf !important;
+  border: 1px solid #98bf45 !important;
+  color: #84a507 !important;
+}
