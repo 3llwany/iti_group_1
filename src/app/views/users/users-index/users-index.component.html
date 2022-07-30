@@ -1,0 +1,74 @@
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">Users</h4>
+      <button class="btn  btn-primary mr-2 float-right" routerLink="/user">Add user</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Table starts -->
+<div class="users-list-table">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <!-- Datatable starts -->
+            <div class="table-responsive">
+              <table id="users-list-datatable" class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                    <th>Phone</th>
+                    <th>Website</th>
+                    <th>Address</th>
+                    <th>Company</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of users">
+                    <td>{{user.id}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>
+                      <a [href]="user.website" target="_blank">{{user.website}}</a>
+                    </td>
+                    <td>
+                      <span> {{user.address?.city}},</span> <br>
+                      <span> {{user.address?.street}}.</span>
+                    </td>
+                    <td>
+                      <span> {{user.company?.name}},</span> <br>
+                      <span> {{user.company?.catchPhrase}}.</span>
+                    </td>
+
+                    <td>
+                      <a class="btn btn-primary" routerLink="/user" [queryParams]="{userId:user.id}">
+                        <i class="fa fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger" (click)="deleteUser(user.id)">
+                        <i class="fa fa-trash"></i>
+                      </a>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+            <!-- Datatable ends -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Table ends -->

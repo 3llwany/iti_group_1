@@ -1,27 +1,100 @@
-<div class="container">
-  <h1>Posts</h1>
-  <label for="title">Post Title</label>
-  <input
-    class="form-control"
-    id="titletitletitle"
-    type="text"
-    placeholder="please enter post title..."
-    [(ngModel)]="postTitle"
-    (keyup.enter)="createPost(postTitle)"
-  />
-  <button #updateBtn class="btn btn-primary" (click)="Update()">
-    Update Post
-  </button>
-  <br />
+<router-outlet></router-outlet>
+<!--
+        <section class="container">
+          <div class="row match-height">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Users</h4>
+                </div>
+                <div class="card-content">
+                  <div class="card-body">
+                    <form [formGroup]="myForm">
+                      <div class="form-row">
+                        <div class="col-md-4 col-12">
+                          <div class="form-group mb-2">
+                            <label for="basic-form-1"> Name</label>
+                            <input type="text" id="basic-form-1" class="form-control" formGroupName="name" />
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                          <div class="form-group mb-2">
+                            <label for="basic-form-3">E-mail</label>
+                            <input type="text" id="basic-form-3" class="form-control" formGroupName="email" />
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                          <div class="form-group mb-2">
+                            <label for="basic-form-4">Contact Number</label>
+                            <input type="number" id="basic-form-4" class="form-control" formGroupName="phone" />
+                          </div>
+                        </div>
+                      </div>
 
-  <br />
-  <ul class="list-unstyled">
-    <li class="list-group-item" *ngFor="let post of posts; let i = index">
-      {{ i + 1 }}- {{ post.title }}
-      <div class="float-right">
-        <button class="btn btn-primary" (click)="getPost(post)">Edit</button>
-        <button class="btn btn-danger" (click)="delete(i)">Delete</button>
-      </div>
-    </li>
-  </ul>
-</div>
+                      <div class="form-row">
+                        <div class="col-md-6 col-12">
+                          <div class="form-group mb-2">
+                            <label for="basic-form-3">username</label>
+                            <input type="text" id="basic-form-3" class="form-control" formGroupName="username" />
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                          <div class="form-group mb-2">
+                            <label for="basic-form-4">website</label>
+                            <input type="number" id="basic-form-4" class="form-control" formGroupName="website" />
+                          </div>
+                        </div>
+                      </div>
+                      <ng-container >
+                        <div class="col-md-3 col-12">
+                          <div class="form-group mb-2">
+                            <label for="basic-form-3">city</label>
+                            <input type="text" id="basic-form-3" class="form-control" formGroupName="city" />
+                          </div>
+                        </div>
+                        <div class="col-md-3 col-12">
+                          <div class="form-group mb-2">
+                            <label for="basic-form-3">street</label>
+                            <input type="text" id="basic-form-3" class="form-control" formGroupName="street" />
+                          </div>
+                        </div>
+                        <div class="col-md-3 col-12">
+                          <div class="form-group mb-2">
+                            <label for="basic-form-3">suite</label>
+                            <input type="text" id="basic-form-3" class="form-control" formGroupName="suite" />
+                          </div>
+                        </div>
+                        <div class="col-md-3 col-12">
+                          <div class="form-group mb-2">
+                            <label for="basic-form-3">zipcode</label>
+                            <input type="text" id="basic-form-3" class="form-control" formGroupName="zipcode" />
+                          </div>
+                        </div>
+                      </ng-container>
+                      <ng-container>
+                        <div class="form-group mb-2">
+                          <label for="basic-form-5">Company</label>
+                          <input type="text" id="basic-form-5" class="form-control" formGroupName="company" />
+                        </div>
+                      </ng-container>
+
+
+
+
+
+                      <button type="button" class="btn btn-primary mr-2">
+                        <i class="ft-check-square mr-1"></i>Save
+                      </button>
+                      <button type="button" class="btn btn-secondary">
+                        <i class="ft-x mr-1"></i>Cancel
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+ -->

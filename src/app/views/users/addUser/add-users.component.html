@@ -1,0 +1,343 @@
+<section class="container">
+  <div class="row match-height">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Add Users</h4>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <form [formGroup]="myForm">
+              <div class="form-row">
+                <div class="col-md-4 col-12">
+                  <div class="form-group mb-2">
+                    <label for="basic-form-1"> Name</label>
+                    <input
+                      type="text"
+                      id="basic-form-1"
+                      class="form-control"
+                      formControlName="name"
+                    />
+                    <span
+                      class="text-danger"
+                      *ngIf="
+                        FormCtrls.name.invalid &&
+                        (FormCtrls.name.touched || submitted)
+                      "
+                    >
+                      <span
+                        *ngIf="
+                          FormCtrls.name.errors?.required ||
+                          FormCtrls.name.errors?.whiteSpace
+                        "
+                      >
+                        this is required
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-4 col-12">
+                  <div class="form-group mb-2">
+                    <label for="basic-form-3">E-mail</label>
+                    <input
+                      type="text"
+                      id="basic-form-3"
+                      class="form-control"
+                      formControlName="email"
+                    />
+                    <span
+                      class="text-danger"
+                      *ngIf="
+                        FormCtrls.email.invalid &&
+                        (FormCtrls.email.touched || submitted)
+                      "
+                    >
+                      <span *ngIf="FormCtrls.email.errors?.required">
+                        this is required
+                      </span>
+                      <span *ngIf="FormCtrls.email.errors?.email">
+                        Please Enter Correct Email
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-4 col-12">
+                  <div class="form-group mb-2">
+                    <label for="basic-form-4">Contact Number</label>
+                    <input
+                      type="text"
+                      id="basic-form-4"
+                      class="form-control"
+                      formControlName="phone"
+                    />
+                    <span
+                      class="text-danger"
+                      *ngIf="
+                        FormCtrls.phone.invalid &&
+                        (FormCtrls.phone.touched || submitted)
+                      "
+                    >
+                      <span *ngIf="FormCtrls.phone.errors?.required">
+                        this is required
+                      </span>
+
+                      <span *ngIf="FormCtrls.phone.errors?.pattern">
+                        Please Enter Correct Number
+                      </span>
+
+                      <span
+                        *ngIf="
+                          FormCtrls.phone.errors?.minlength ||
+                          FormCtrls.phone.errors?.maxlength
+                        "
+                      >
+                        phone must 11 be number
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-6 col-12">
+                  <div class="form-group mb-2">
+                    <label for="basic-form-3">username</label>
+
+                    <input
+                      type="text"
+                      id="basic-form-3"
+                      class="form-control"
+                      formControlName="username"
+                    />
+                    <span
+                      class="text-danger"
+                      *ngIf="
+                        FormCtrls.username.invalid &&
+                        (FormCtrls.username.touched || submitted)
+                      "
+                    >
+                      <span *ngIf="FormCtrls.username.errors?.required">
+                        this is required
+                      </span>
+                      <span *ngIf="FormCtrls.username.errors?.noSpace">
+                        username Cannot Contain Space
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-6 col-12">
+                  <div class="form-group mb-2">
+                    <label for="basic-form-4">website</label>
+                    <input
+                      type="text"
+                      id="basic-form-4"
+                      class="form-control"
+                      formControlName="website"
+                    />
+                    <span
+                      class="text-danger"
+                      *ngIf="
+                        FormCtrls.website.invalid &&
+                        (FormCtrls.website.touched || submitted)
+                      "
+                    >
+                      <span *ngIf="FormCtrls.website.errors?.required">
+                        this is required</span
+                      >
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card form-row" formGroupName="address">
+                <div class="card-body row">
+                  <h6 class="card-subtitle mb-2 col-12 text-muted">Address</h6>
+                  <div class="col-md-3 col-12">
+                    <div class="form-group mb-2">
+                      <label for="basic-form-3">city</label>
+                      <input
+                        type="text"
+                        id="basic-form-3"
+                        class="form-control"
+                        formControlName="city"
+                      />
+                      <span
+                        class="text-danger"
+                        *ngIf="
+                          addres.get('city').invalid &&
+                          (addres.get('city').touched || submitted)
+                        "
+                      >
+                        <span *ngIf="addres.get('city').errors?.required">
+                          this is required</span
+                        >
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-12">
+                    <div class="form-group mb-2">
+                      <label for="basic-form-3">street</label>
+                      <input
+                        type="text"
+                        id="basic-form-3"
+                        class="form-control"
+                        formControlName="street"
+                      />
+                      <span
+                        class="text-danger"
+                        *ngIf="
+                          addres.get('street').invalid &&
+                          (addres.get('street').touched || submitted)
+                        "
+                      >
+                        <span *ngIf="addres.get('street').errors?.required">
+                          this is required</span
+                        >
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-12">
+                    <div class="form-group mb-2">
+                      <label for="basic-form-3">suite</label>
+                      <input
+                        type="text"
+                        id="basic-form-3"
+                        class="form-control"
+                        formControlName="suite"
+                      />
+                      <span
+                        class="text-danger"
+                        *ngIf="
+                          addres.get('suite').invalid &&
+                          (addres.get('suite').touched || submitted)
+                        "
+                      >
+                        <span *ngIf="addres.get('suite').errors?.required">
+                          this is required</span
+                        >
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-12">
+                    <div class="form-group mb-2">
+                      <label for="basic-form-3">zipcode</label>
+                      <input
+                        type="text"
+                        id="basic-form-3"
+                        class="form-control"
+                        formControlName="zipcode"
+                      />
+                      <span
+                        class="text-danger"
+                        *ngIf="
+                          addres.get('zipcode').invalid &&
+                          (addres.get('zipcode').touched || submitted)
+                        "
+                      >
+                        <span *ngIf="addres.get('zipcode').errors?.required">
+                          this is required</span
+                        >
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card form-row" formGroupName="company">
+                <div class="card-body row">
+                  <h6 class="card-subtitle mb-2 col-12 text-muted">Company</h6>
+                  <div class="col-md-4 col-12">
+                    <div class="form-group mb-2">
+                      <label for="basic-form-3">name</label>
+                      <input
+                        type="text"
+                        id="basic-form-3"
+                        class="form-control"
+                        formControlName="name"
+                      />
+                      <span
+                        class="text-danger"
+                        *ngIf="
+                          company.get('name').invalid &&
+                          (company.get('name').touched || submitted)
+                        "
+                      >
+                        <span *ngIf="company.get('name').errors?.required">
+                          this is required</span
+                        >
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-12">
+                    <div class="form-group mb-2">
+                      <label for="basic-form-3">catchPhrase</label>
+                      <input
+                        type="text"
+                        id="basic-form-3"
+                        class="form-control"
+                        formControlName="catchPhrase"
+                      />
+                      <span
+                        class="text-danger"
+                        *ngIf="
+                          company.get('catchPhrase').invalid &&
+                          (company.get('catchPhrase').touched || submitted)
+                        "
+                      >
+                        <span
+                          *ngIf="company.get('catchPhrase').errors?.required"
+                        >
+                          this is required</span
+                        >
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-12">
+                    <div class="form-group mb-2">
+                      <label for="basic-form-3">bs</label>
+                      <input
+                        type="text"
+                        id="basic-form-3"
+                        class="form-control"
+                        formControlName="bs"
+                      />
+                      <span
+                        class="text-danger"
+                        *ngIf="
+                          company.get('bs').invalid &&
+                          (company.get('bs').touched || submitted)
+                        "
+                      >
+                        <span *ngIf="company.get('bs').errors?.required">
+                          this is required</span
+                        >
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                *ngIf="!userId"
+                type="button"
+                (click)="addUser()"
+                class="btn btn-primary mr-2"
+              >
+                <i class="ft-check-square mr-1"></i>add
+              </button>
+
+              <button
+                *ngIf="userId"
+                type="button"
+                (click)="updateUser()"
+                class="btn btn-primary mr-2"
+              >
+                <i class="ft-check-square mr-1"></i>update
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

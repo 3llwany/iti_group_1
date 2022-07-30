@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Posts</h1>
+  <label for="title">Post Title</label>
+  <input class="form-control" id="titletitletitle" type="text" placeholder="please enter post title..."
+    [(ngModel)]="postTitle" (keyup.enter)="createPost(postTitle)" />
+  <button #updateBtn class="btn btn-primary" (click)="Update()">
+    Update Post
+  </button>
+  <br />
+
+  <br />
+  <ul class="list-unstyled">
+    <li class="list-group-item" *ngFor="let post of posts; let i = index">
+      {{ i + 1 }}- {{ post.title }}
+      <div class="float-right">
+        <button class="btn btn-primary" (click)="getPost(post)">Edit</button>
+        <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>
